@@ -8,11 +8,11 @@ def hello_world():
 
 @app.route("/restaurants/")
 def restaurants():
-    return "Welcome to restaurants page!!"
+    return render_template("restaurants.html")
 
 @app.route("/groceries/")
 def groceries():
-    return "Welcome to Groceries page!!"
+    return render_template("groceries.html")
 
 @app.route("/dish/<int:id>")
 def update(id):
