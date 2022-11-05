@@ -6,31 +6,68 @@
     Groceries
 </title>
 
+<script type="text/javascript">
+   function ValidateSelection()
+   {
+       alert("hello !");
+       document.write("varinder")
+       var check_box = document.getElementsByName("grocery");
+       var CheckedItems = 0;
+       var list = [];
+       for(var i = 0; i < check_box.length; i++)
+       {
+           if(check_box[i].checked)
+            list.push(check_box[i]["id"])
+            CheckedItems++;
+       }
+       document.write(list)
+       window.location.assign(‘https://www.google.com/’);
+   }
+</script>
 {% endblock %}
 
 {% block body %}
 
+<form>
+    <input type="checkbox" id="Cucumber" name="grocery">
+    <label for="Cucumber"> Cucumber</label><br>
+    <input type="checkbox" id="Bell Pepper" name="grocery">
+    <label for="Bell Pepper"> Bell Pepper</label><br>
+    <input type="checkbox" id="Bananas" name="grocery">
+    <label for="Bananas"> Bananas</label><br>
+    <input type="checkbox" id="Apples" name="grocery">
+    <label for="Apples"> Apples</label><br>
+    <input type="checkbox" id="Red Onions" name="grocery">
+    <label for="Red Onions"> Red Onions</label><br>
+    <input type="checkbox" id="White Onions" name="grocery">
+    <label for="White Onions"> White Onions</label><br>
+    <input type="checkbox" id="Tofu" name="grocery">
+    <label for="Tofu"> Tofu</label><br>
+    <input type="checkbox" id="Coke" name="grocery">
+    <label for="Coke"> Coke/Pepsi</label><br>
+    <input type="checkbox" id="fries" name="grocery">
+    <label for="fries"> French Fries</label><br>
+    <input type="checkbox" id="rings" name="grocery">
+    <label for="rings"> Onion Rings</label><br>
+</form>
+<p><input type="submit" value="Submit list" onclick="ValidateSelection();"/></p>
 
-<input type="checkbox" id="Cucumber" name="Cucumber">
-<label for="Cucumber"> Cucumber</label><br>
-<input type="checkbox" id="Bell Pepper" name="Bell Pepper" value="Cucumber">
-<label for="Bell Pepper"> Bell Pepper</label><br>
-<input type="checkbox" id="Bananas" name="Bananas">
-<label for="Bananas"> Bananas</label><br>
-<input type="checkbox" id="Apples" name="Apples">
-<label for="Apples"> Apples</label><br>
-<input type="checkbox" id="Red Onions" name="Red Onions">
-<label for="Red Onions"> Red Onions</label><br>
-<input type="checkbox" id="White Onions" name="White Onions">
-<label for="White Onions"> White Onions</label><br>
-<input type="checkbox" id="Tofu" name="Tofu">
-<label for="Tofu"> Tofu</label><br>
-<input type="checkbox" id="Coke" name="Coke">
-<label for="Coke"> Coke/Pepsi</label><br>
-<input type="checkbox" id="fries" name="fries">
-<label for="fries"> French Fries</label><br>
-<input type="checkbox" id="rings" name="rings">
-<label for="rings"> Onion Rings</label><br>
+<script type="text/javascript">
+   function ValidateSelection()
+   {
+       var check_box = document.getElementsByName("grocery");
+       var CheckedItems = 0;
+       var list = [];
+       for(var i = 0; i < check_box.length; i++)
+       {
+           if(check_box[i].checked)
+            list.push(check_box[i]["id"])
+            CheckedItems++;
+       }
+       document.write(list)
+       window.location.replace("/restaurants/");
+   }
+</script>
 
 
 {% endblock %}

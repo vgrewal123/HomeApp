@@ -14,7 +14,11 @@ def restaurants():
 def groceries():
     return render_template("groceries.html")
 
-@app.route("/dish/<int:id>")
+@app.route("/list/")
+def list():
+    return "Hello, World! Here is list of groceries"
+
+@app.route("/list/<int:id>")
 def update(id):
     return "Hello, World! the id returned is " + str(id)
 
