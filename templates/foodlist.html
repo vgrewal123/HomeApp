@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>
+    Groceries to buy
+</title>
+<!-- set background image as grocery.jpg-->
+<style>
+    body {
+        background-image: url("{{ url_for('static', filename='images/grocery2.jpg') }}");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+
+<!-- color of the text be red-->
+<h1>
+    <span style="color:rgb(8, 0, 255)">Groceries to buy</span>
+</h1>
+<ul>
+    <!-- color of the text be blue-->
+    <!-- text should be bold-->
+
+    {% for item in list_to_buy %}
+        <li style="color:blue; font-weight:bold"> {{ item }} </li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+

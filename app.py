@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+# command to run flask app: python app.py
+# command to run flask app in debug mode: python app.py -d
+# flask run --host=http://127.0.0.1:5000 --port=5000 --app=app.py --debug --reload
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -21,6 +24,11 @@ def list():
 @app.route("/list/<int:id>")
 def update(id):
     return "Hello, World! the id returned is " + str(id)
+
+@app.route("/foodlist/")
+def foodlist():
+    groceries = request.args['list'].split(',')
+    return render_template("foodlist.html", list_to_buy=groceries)
 
 if __name__ == "__main__":
     app.run(debug=True)

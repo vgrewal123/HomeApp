@@ -9,9 +9,16 @@
 {% endblock %}
 
 {% block body %}
-
+<style>
+    body {
+        background-image: url("{{ url_for('static', filename='images/food.webp') }}");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+    }
+</style>
 <link rel="stylesheet" href="{{ url_for('static', filename='css/restaurants.css')}}">
-<table>
+<table style="color:rgb(0, 255, 102)">
     <tr>
         <th>Restaurant</th>
         <th>Food Type</th>
