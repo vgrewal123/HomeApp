@@ -22,14 +22,19 @@
 <h1>
     <span style="color:rgb(8, 0, 255)">Groceries to buy</span>
 </h1>
+{% if list_to_buy|length <1 %}
+<h4 style="color:blue; font-weight:bold">There are currently no items added to list</h4>
+{% else %}
 <ul>
     <!-- color of the text be blue-->
     <!-- text should be bold-->
 
     {% for item in list_to_buy %}
-        <li style="color:blue; font-weight:bold"> {{ item }} </li>
+        <li style="color:blue; font-weight:bold"> {{ item.name }} </li>
     {% endfor %}
 </ul>
+{% endif %}
+<button type="button" onclick="window.location.href='/fooddelete/'">Clear List</button>
 {% endblock %}
 
 

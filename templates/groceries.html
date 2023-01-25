@@ -98,7 +98,8 @@
     
     
 </form>
-<p><input type="submit" value="Submit list" action="/foodlist/" method="GET" onclick="ValidateSelection();"/></p>
+<p><input type="submit" value="Submit list" onclick="ValidateSelection();"/></p>
+
 
 <script type="text/javascript">
    function ValidateSelection()
@@ -112,11 +113,13 @@
             list.push(check_box[i]["id"])
             CheckedItems++;
        }
-       //document.write(list)
        window.location.href="/foodlist/?list=" + list
-       //window.location.replace("/restaurants/");
    }
 </script>
+<!-- button to redirect to foodlist-->
+<button type="button" onclick="window.location.href='/foodlist/'">Go to foodlist</button>
+
+
 
 
 {% endblock %}
